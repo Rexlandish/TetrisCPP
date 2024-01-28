@@ -1,20 +1,35 @@
 #include <iostream>
 #include "Tetromino.h"
-
+#include <stdlib.h>
 int main()
 {
-    int exampleTetrominoMatrix[4][4] = {
-        {0, 1, 1, 0},
-        {1, 1, 0, 0},
+
+    int exampleTetrominoMatrixI[4][4] = {
+        {0, 0, 0, 0},
+        {1, 1, 1, 1},
         {0, 0, 0, 0},
         {0, 0, 0, 0}
     };
+    Tetromino I{ '#', exampleTetrominoMatrixI};
+    I.centerOfRotation = Vector2(1.5, 1.5);
 
-    Tetromino t{ '?', exampleTetrominoMatrix};
-
-
-    t.Print();
-    Vector2 res = t.RotatePointAround(Vector2(3, 5), Vector2(1, 4), 1);
-    std::cout << res.x << " " << res.y;
+    int exampleTetrominoMatrixT[4][4] = {
+        {0, 1, 0, 0},
+        {1, 1, 0, 0},
+        {0, 1, 0, 0},
+        {0, 0, 0, 0}
+    };
+    Tetromino T{ '#', exampleTetrominoMatrixT };
+    T.centerOfRotation = Vector2(1, 1);
+    
+    while (true)
+    {
+        T.Print();
+        L.Print();
+        T.Rotate(90);
+        L.Rotate(90);
+        std::cin.ignore();
+        system("CLS");
+    }
 
 }
