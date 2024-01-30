@@ -4,9 +4,17 @@
 #include <iostream>
 #include <string>
 
-
-Tetromino::Tetromino(char ansiEscapeColor, int tetrominoMatrix[4][4] = new int[4][4] { {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}) : ansiEscapeColor{ansiEscapeColor}
+Tetromino::Tetromino()
 {
+
+}
+
+Tetromino::Tetromino(int ansiEscapeColor) : ansiEscapeColor{ ansiEscapeColor }
+{
+
+}
+
+Tetromino::Tetromino(int ansiEscapeColor, int tetrominoMatrix[4][4] = new int[4][4] {0}) : ansiEscapeColor{ansiEscapeColor}{
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
@@ -14,13 +22,12 @@ Tetromino::Tetromino(char ansiEscapeColor, int tetrominoMatrix[4][4] = new int[4
 			this->tetrominoMatrix[i][j] = tetrominoMatrix[i][j];
 		}
 	}
-
 };
 
 void Tetromino::Rotate(double degrees) // 1 -> 90 degree rotation clockwise, -1 -> 90 degree rotation anticlockwise, etc.
 {
 	// A buffer to store the rotated pixels of the tetromino
-	int rotatedTetrominoMatrix[4][4] = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
+	int rotatedTetrominoMatrix[4][4] = { 0 };
 
 	// Iterate through all indexes in the original tetromino matrix checking for 1s.
 	for (int i = 0; i < 4; i++)

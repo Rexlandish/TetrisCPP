@@ -4,6 +4,8 @@
 #include <chrono>
 #include <thread>
 #include <Windows.h>
+#include "TetrisBoard.h"
+#include "Vector2.h"
 
 int main()
 {
@@ -68,6 +70,8 @@ int main()
 
     std::vector<Tetromino> tetrominos = { I, J, L, O, S, T, Z };
 
+    /*
+    // Display all pieces and rotations
     while (true)
     {
         system("CLS");
@@ -80,6 +84,34 @@ int main()
         }
 
         Sleep(100);
+    }
+    */
+
+    /*
+    // Do a flashing random colour thing
+    while (true)
+    {
+        system("CLS");
+        TetrisBoard board;
+        board.DoRandomGridColours();
+        Sleep(100);
+    }
+    */
+
+    TetrisBoard tetrisBoard;
+    tetrisBoard.activeTetromino = I;
+    while (true)
+    {
+        
+        tetrisBoard.activeTetrominoPosition = Vector2(rand() % 10, rand() % 10);
+        for (int i = 0; i < 16; i++)
+        {
+            system("CLS");
+            tetrisBoard.activeTetromino.Rotate(90);
+            tetrisBoard.DrawTetrominoOnGrid();
+            tetrisBoard.DrawGrid();
+            Sleep(25);
+        }
     }
 
 }
