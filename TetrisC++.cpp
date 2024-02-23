@@ -6,10 +6,15 @@
 #include <Windows.h>
 #include "TetrisBoard.h"
 #include "Vector2.h"
+#include <thread>
+#include "ButtonDownHandler.h"
+#include <bitset>
 
 int main()
 {
+    {
 
+    // Initialization of pieces
     int exampleTetrominoMatrixI[4][4] = {
         {0, 0, 0, 0},
         {1, 1, 1, 1},
@@ -70,8 +75,47 @@ int main()
 
     std::vector<Tetromino> tetrominos = { I, J, L, O, S, T, Z };
 
+    }
     /*
     // Display all pieces and rotations
+    Tetromino z1{ 101, exampleTetrominoMatrixZ };
+    Tetromino z2{ 101, exampleTetrominoMatrixZ };
+    Tetromino I1{ 106, exampleTetrominoMatrixI }; I1.centerOfRotation = Vector2(1.5, 1.5);
+    Tetromino I2{ 106, exampleTetrominoMatrixI }; I2.centerOfRotation = Vector2(1.5, 1.5);
+    Tetromino t1{ 105, exampleTetrominoMatrixT };
+    Tetromino t2{ 105, exampleTetrominoMatrixT };
+    while (true)
+    {
+        std::cout << "Z piece rotating 90 degrees\n";
+        z1.Print();
+        std::cout << "Z piece rotating 45 degrees\n";
+        z2.Print();
+
+        std::cout << "I piece rotating 90 degrees\n";
+        I1.Print();
+        std::cout << "I piece \"rotating\" 50 degrees\n";
+        I2.Print();
+
+        std::cout << "T piece rotating 90 degrees\n";
+        t1.Print();
+        std::cout << "T piece rotating 45 degrees\n";
+        t2.Print();
+
+        z1.Rotate(90);
+        z2.Rotate(45);
+
+        I1.Rotate(90);
+        I2.Rotate(50);
+
+        t1.Rotate(90);
+        t2.Rotate(45);
+        Sleep(100);
+        std::cout << std::flush;
+        system("CLS");
+    }
+    */
+
+    /*
     while (true)
     {
         system("CLS");
@@ -86,6 +130,7 @@ int main()
         Sleep(100);
     }
     */
+    
 
     /*
     // Do a flashing random colour thing
@@ -98,6 +143,7 @@ int main()
     }
     */
 
+    /*
     TetrisBoard tetrisBoard;
     tetrisBoard.activeTetromino = I;
     while (true)
@@ -113,5 +159,37 @@ int main()
             Sleep(25);
         }
     }
+    */
+
+   
+    // Test multiple button presses
+    /*
+    for (int i = 0; i < 1000; i++)
+    {
+        if (GetKeyState('A') & 0x8000)
+        {
+            
+        }
+
+
+        double framerate = 30;
+        double millisecondsPerFrame = 1000 / framerate;
+
+        Sleep(millisecondsPerFrame);
+    }
+    */
+
+
+
+    ButtonDownHandler buttonDownHandler{};
+    
+    while (true)
+    {
+        buttonDownHandler.Update();
+        buttonDownHandler.Print();
+        Sleep(50);
+        system("CLS");
+    }
+
 
 }

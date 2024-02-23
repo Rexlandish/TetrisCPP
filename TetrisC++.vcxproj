@@ -127,12 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ButtonDownHandler.cpp" />
     <ClCompile Include="TetrisBoard.cpp" />
     <ClCompile Include="TetrisC++.cpp" />
     <ClCompile Include="Tetromino.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ButtonDownHandler.h" />
     <ClInclude Include="TetrisBoard.h" />
     <ClInclude Include="Tetromino.h" />
     <ClInclude Include="Vector2.h" />
