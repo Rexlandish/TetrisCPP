@@ -130,12 +130,14 @@
     <ClCompile Include="ButtonDownHandler.cpp" />
     <ClCompile Include="TetrisBoard.cpp" />
     <ClCompile Include="TetrisC++.cpp" />
+    <ClCompile Include="TetrisMain.cpp" />
     <ClCompile Include="Tetromino.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonDownHandler.h" />
     <ClInclude Include="TetrisBoard.h" />
+    <ClInclude Include="TetrisMain.h" />
     <ClInclude Include="Tetromino.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>

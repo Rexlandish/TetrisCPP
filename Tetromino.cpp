@@ -88,6 +88,7 @@ void Tetromino::Print()
 	}
 
 }
+
 Vector2 Tetromino::RotatePointAround(Vector2 pointOfRotation, Vector2 originalPoint, double degrees)
 {
 	// Convert cartesian coordinates to polar coordinates
