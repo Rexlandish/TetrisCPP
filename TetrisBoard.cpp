@@ -49,6 +49,7 @@ void TetrisBoard::DrawGrid()
 			int currentPixelColor = (boardToDisplay[i][j] == 0 ? 40 : boardToDisplay[i][j]);
 
 			std::cout << "\033[" << currentPixelColor << "m  \033[40m";
+
 			//std::cout << board[i][j] << " ";
 		}
 
@@ -69,7 +70,9 @@ void TetrisBoard::DoRandomGridColours()
 	{
 		for (int j = 0; j < 10; j++)
 		{
-			board[i][j] = rand() % 8;
+			int randomValue = rand() % 8;
+			//std::cout << randomValue;
+			board[i][j] = randomValue;
 		}
 	}
 

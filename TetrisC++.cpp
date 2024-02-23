@@ -1,19 +1,17 @@
 #include <iostream>
-#include "Tetromino.h"
 #include <stdlib.h>
 #include <chrono>
 #include <thread>
 #include <Windows.h>
+#include <thread>
+#include <bitset>
+#include "Tetromino.h"
 #include "TetrisBoard.h"
 #include "Vector2.h"
-#include <thread>
 #include "ButtonDownHandler.h"
-#include <bitset>
 
 int main()
 {
-    {
-
     // Initialization of pieces
     int exampleTetrominoMatrixI[4][4] = {
         {0, 0, 0, 0},
@@ -75,7 +73,6 @@ int main()
 
     std::vector<Tetromino> tetrominos = { I, J, L, O, S, T, Z };
 
-    }
     /*
     // Display all pieces and rotations
     Tetromino z1{ 101, exampleTetrominoMatrixZ };
@@ -142,10 +139,12 @@ int main()
         Sleep(100);
     }
     */
+    
 
+    
     /*
     TetrisBoard tetrisBoard;
-    tetrisBoard.activeTetromino = I;
+    tetrisBoard.activeTetromino = Z;
     while (true)
     {
         
@@ -153,7 +152,7 @@ int main()
         for (int i = 0; i < 16; i++)
         {
             system("CLS");
-            tetrisBoard.activeTetromino.Rotate(90);
+            tetrisBoard.activeTetromino.Rotate(45);
             tetrisBoard.DrawTetrominoOnGrid();
             tetrisBoard.DrawGrid();
             Sleep(25);
@@ -161,26 +160,8 @@ int main()
     }
     */
 
-   
-    // Test multiple button presses
-    /*
-    for (int i = 0; i < 1000; i++)
-    {
-        if (GetKeyState('A') & 0x8000)
-        {
-            
-        }
 
-
-        double framerate = 30;
-        double millisecondsPerFrame = 1000 / framerate;
-
-        Sleep(millisecondsPerFrame);
-    }
-    */
-
-
-
+    
     ButtonDownHandler buttonDownHandler{};
     
     while (true)
@@ -190,6 +171,6 @@ int main()
         Sleep(50);
         system("CLS");
     }
-
+    
 
 }
